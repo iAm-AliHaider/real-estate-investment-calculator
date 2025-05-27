@@ -1647,4 +1647,277 @@ body {
   .header-actions {
     width: 100%;
   }
+}
+
+/* Add better small screen support for the calculator container */
+@media (max-width: 480px) {
+  .calculator-container {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+  
+  .app-header {
+    padding: 0.75rem;
+  }
+  
+  .calculator-title {
+    font-size: 1.25rem;
+  }
+  
+  .calculator-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .dashboard-main {
+    padding: 0.75rem;
+  }
+  
+  .section-card {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .dashboard-sidebar {
+    max-height: 250px;
+  }
+}
+
+/* Improve table responsiveness on small screens */
+@media (max-width: 768px) {
+  .comparison-table-container {
+    margin: 0 -0.75rem;
+    width: calc(100% + 1.5rem);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .comparison-table {
+    min-width: 640px;
+  }
+  
+  .data-table {
+    min-width: 100%;
+  }
+  
+  /* Make tooltips better positioned on mobile */
+  .tooltip .tooltip-text {
+    width: 200px;
+    left: -100px;
+  }
+  
+  .tooltip .tooltip-text::after {
+    left: 50%;
+  }
+}
+
+/* Fix button spacing and positioning for small screens */
+@media (max-width: 480px) {
+  .comparison-export-btn,
+  .comparison-action-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .calculate-button {
+    padding: 0.75rem 1rem;
+    min-height: 45px;
+  }
+  
+  .metric-card {
+    padding: 0.75rem;
+  }
+  
+  .metric-title {
+    font-size: 0.85rem;
+  }
+  
+  .metric-value {
+    font-size: 1.25rem;
+  }
+  
+  .metric-context {
+    font-size: 0.8rem;
+  }
+  
+  .performance-metrics {
+    grid-gap: 0.75rem;
+  }
+}
+
+/* Improve input field display on small screens */
+@media (max-width: 480px) {
+  .input-with-unit {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-with-unit input {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .input-unit {
+    padding: 0 0.5rem;
+    min-width: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Fix sidebar metrics on small screens */
+  .sidebar-metrics {
+    padding: 0.75rem;
+  }
+  
+  .sidebar-metric-item {
+    padding: 0.5rem 0;
+  }
+  
+  .sidebar-metric-value {
+    font-size: 1rem;
+  }
+}
+
+/* Ensure calculator tabs work well on mobile */
+@media (max-width: 480px) {
+  .calculator-tabs {
+    padding: 0;
+    gap: 0;
+  }
+  
+  .calculator-tab {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+    min-width: 80px;
+  }
+}
+
+/* Fix tab content scrolling on mobile */
+@media (max-width: 768px) {
+  .calculator-tab-content {
+    padding: 1rem 0 0 0;
+  }
+  
+  .results-content {
+    padding: 0 0.75rem 10px 0.75rem;
+  }
+}
+
+/* Improve header actions on mobile */
+@media (max-width: 480px) {
+  .header-actions {
+    margin-top: 0.5rem;
+  }
+  
+  .dashboard-header, 
+  .comparison-header {
+    padding: 0.75rem;
+  }
+}
+
+/* Fix calculation fields on small screens */
+@media (max-width: 480px) {
+  .dashboard-grid {
+    gap: 0.75rem;
+  }
+
+  .form-grid {
+    gap: 0.75rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Fix button cutoff issues */
+.dashboard-header .comparison-export-btn {
+  padding: 0.6rem 1.2rem;
+  margin-left: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .dashboard-header .comparison-export-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.button-text {
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 480px) {
+  .button-text {
+    font-size: 0.85rem;
+    display: inline-block;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 360px) {
+  .button-text {
+    max-width: 70px;
+  }
+}
+
+/* Enhance data tables for mobile devices */
+.data-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .data-table td, 
+  .data-table th {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .analysis-panel {
+    padding: 0.75rem;
+  }
+  
+  .panel-title {
+    font-size: 0.95rem;
+  }
+  
+  .panel-body {
+    padding: 0.5rem 0;
+  }
+  
+  /* Make sidebar fully collapsible on mobile for better space usage */
+  .dashboard-sidebar {
+    overflow-y: auto;
+    max-height: 180px;
+    transition: max-height 0.3s ease;
+  }
+  
+  /* Improve table layout */
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
 } 

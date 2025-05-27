@@ -848,7 +848,8 @@ export default function BasicCalculator() {
               onClick={saveToComparison}
               title="Add to comparison"
             >
-              <CompareIcon /> Add to Comparison
+              <CompareIcon /> 
+              <span className="button-text">Add to Comparison</span>
             </button>
           </div>
         </div>
@@ -946,34 +947,36 @@ export default function BasicCalculator() {
                 <h3 className="panel-title">Project Economics</h3>
               </div>
               <div className="panel-body">
-                <table className="data-table">
-                  <tbody>
-                    <tr>
-                      <td>Total Revenue</td>
-                      <td>{formatAmount(result.totalRevenue)}</td>
-                    </tr>
-                    <tr>
-                      <td>Gross Profit</td>
-                      <td className={result.totalGrossProfit >= 0 ? 'positive-cell' : 'negative-cell'}>
-                        {formatAmount(result.totalGrossProfit)}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Tax & Commission</td>
-                      <td>{formatAmount(result.totalTaxCommission)}</td>
-                    </tr>
-                    <tr>
-                      <td>Operational Cost</td>
-                      <td>{formatAmount(result.operationalCost)}</td>
-                    </tr>
-                    <tr>
-                      <td>Net Profit</td>
-                      <td className={result.netProfit >= 0 ? 'positive-cell' : 'negative-cell'}>
-                        {formatAmount(result.netProfit)}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="data-table-container">
+                  <table className="data-table">
+                    <tbody>
+                      <tr>
+                        <td>Total Revenue</td>
+                        <td>{formatAmount(result.totalRevenue)}</td>
+                      </tr>
+                      <tr>
+                        <td>Gross Profit</td>
+                        <td className={result.totalGrossProfit >= 0 ? 'positive-cell' : 'negative-cell'}>
+                          {formatAmount(result.totalGrossProfit)}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tax & Commission</td>
+                        <td>{formatAmount(result.totalTaxCommission)}</td>
+                      </tr>
+                      <tr>
+                        <td>Operational Cost</td>
+                        <td>{formatAmount(result.operationalCost)}</td>
+                      </tr>
+                      <tr>
+                        <td>Net Profit</td>
+                        <td className={result.netProfit >= 0 ? 'positive-cell' : 'negative-cell'}>
+                          {formatAmount(result.netProfit)}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             
@@ -982,30 +985,32 @@ export default function BasicCalculator() {
                 <h3 className="panel-title">Financial Analysis</h3>
               </div>
               <div className="panel-body">
-                <table className="data-table">
-                  <tbody>
-                    <tr>
-                      <td>ROI (%)</td>
-                      <td className={result.roi >= 0 ? 'positive-cell' : 'negative-cell'}>
-                        {result.roi.toFixed(2)}%
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Annualized Return (%)</td>
-                      <td className={result.annualizedReturn >= 0 ? 'positive-cell' : 'negative-cell'}>
-                        {result.annualizedReturn.toFixed(2)}%
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Equity Requirement</td>
-                      <td>{formatAmount(result.equityRequirement)}</td>
-                    </tr>
-                    <tr>
-                      <td>Loan Amount</td>
-                      <td>{formatAmount(result.loanAmount)}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="data-table-container">
+                  <table className="data-table">
+                    <tbody>
+                      <tr>
+                        <td>ROI (%)</td>
+                        <td className={result.roi >= 0 ? 'positive-cell' : 'negative-cell'}>
+                          {result.roi.toFixed(2)}%
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Annualized Return (%)</td>
+                        <td className={result.annualizedReturn >= 0 ? 'positive-cell' : 'negative-cell'}>
+                          {result.annualizedReturn.toFixed(2)}%
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Equity Requirement</td>
+                        <td>{formatAmount(result.equityRequirement)}</td>
+                      </tr>
+                      <tr>
+                        <td>Loan Amount</td>
+                        <td>{formatAmount(result.loanAmount)}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             
@@ -1014,22 +1019,24 @@ export default function BasicCalculator() {
                 <h3 className="panel-title">Unit Economics</h3>
               </div>
               <div className="panel-body">
-                <table className="data-table">
-                  <tbody>
-                    <tr>
-                      <td>Construction Cost Per Sqm</td>
-                      <td>{formatAmount(result.costPerSqm)}</td>
-                    </tr>
-                    <tr>
-                      <td>Selling Price Per Sqm</td>
-                      <td>{formatAmount(result.sellingPricePerSqm)}</td>
-                    </tr>
-                    <tr>
-                      <td>Break-even Unit Price</td>
-                      <td>{formatAmount(result.breakEvenUnitPrice)}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="data-table-container">
+                  <table className="data-table">
+                    <tbody>
+                      <tr>
+                        <td>Construction Cost Per Sqm</td>
+                        <td>{formatAmount(result.costPerSqm)}</td>
+                      </tr>
+                      <tr>
+                        <td>Selling Price Per Sqm</td>
+                        <td>{formatAmount(result.sellingPricePerSqm)}</td>
+                      </tr>
+                      <tr>
+                        <td>Break-even Unit Price</td>
+                        <td>{formatAmount(result.breakEvenUnitPrice)}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
             
@@ -1038,26 +1045,28 @@ export default function BasicCalculator() {
                 <h3 className="panel-title">Project Inputs</h3>
               </div>
               <div className="panel-body">
-                <table className="data-table">
-                  <tbody>
-                    <tr>
-                      <td>Number of Units</td>
-                      <td>{fields.numberOfUnits}</td>
-                    </tr>
-                    <tr>
-                      <td>Unit Size (sqm)</td>
-                      <td>{fields.unitSizeInSqm}</td>
-                    </tr>
-                    <tr>
-                      <td>Project Duration</td>
-                      <td>{fields.duration} months</td>
-                    </tr>
-                    <tr>
-                      <td>Off-Sale Percentage</td>
-                      <td>{fields.offSalePercentage}%</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="data-table-container">
+                  <table className="data-table">
+                    <tbody>
+                      <tr>
+                        <td>Number of Units</td>
+                        <td>{fields.numberOfUnits}</td>
+                      </tr>
+                      <tr>
+                        <td>Unit Size (sqm)</td>
+                        <td>{fields.unitSizeInSqm}</td>
+                      </tr>
+                      <tr>
+                        <td>Project Duration</td>
+                        <td>{fields.duration} months</td>
+                      </tr>
+                      <tr>
+                        <td>Off-Sale Percentage</td>
+                        <td>{fields.offSalePercentage}%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -1236,7 +1245,7 @@ export default function BasicCalculator() {
       <div className="comparison-container">
         <div className="comparison-header">
           <h2 className="comparison-title">Compare Investment Scenarios</h2>
-          <div className="header-actions">
+          <div className="comparison-controls">
             <button 
               type="button"
               className="comparison-action-btn comparison-export-btn"
@@ -1244,7 +1253,8 @@ export default function BasicCalculator() {
               disabled={selectedData.length === 0}
               title="Export to CSV"
             >
-              <TableIcon /> Export to CSV
+              <TableIcon /> 
+              <span className="button-text">Export to CSV</span>
             </button>
           </div>
         </div>
@@ -1267,97 +1277,99 @@ export default function BasicCalculator() {
         
         {selectedData.length > 0 ? (
           <div className="comparison-table-container">
-            <table className="comparison-table">
-              <thead>
-                <tr>
-                  <th>Metric</th>
-                  {selectedData.map(scenario => (
-                    <th key={scenario.id}>{scenario.name}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="comparison-metric-group">
-                  <td colSpan={selectedData.length + 1}>Key Metrics</td>
-                </tr>
-                {METRICS.filter(m => SUMMARY_METRICS.includes(m.key)).map(metric => (
-                  <tr key={metric.key}>
-                    <td>{metric.label}</td>
-                    {selectedData.map(scenario => {
-                      const value = scenario.result[metric.key as keyof CalculationResult];
-                      const isProfit = metric.isProfit;
-                      const valueClass = isProfit ? (value >= 0 ? 'positive-value' : 'negative-value') : '';
-                      
-                      return (
-                        <td key={`${scenario.id}-${metric.key}`} className={valueClass}>
-                          {metric.key === 'roi' || metric.key === 'annualizedReturn'
-                            ? `${value.toFixed(2)}%`
-                            : formatAmount(value)
-                          }
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-                
-                <tr className="comparison-metric-group">
-                  <td colSpan={selectedData.length + 1}>Project Economics</td>
-                </tr>
-                {METRICS.filter(m => ['totalRevenue', 'totalDevelopmentCost', 'totalGrossProfit'].includes(m.key)).map(metric => (
-                  <tr key={metric.key}>
-                    <td>{metric.label}</td>
-                    {selectedData.map(scenario => {
-                      const value = scenario.result[metric.key as keyof CalculationResult];
-                      const isProfit = metric.isProfit;
-                      const valueClass = isProfit ? (value >= 0 ? 'positive-value' : 'negative-value') : '';
-                      
-                      return (
-                        <td key={`${scenario.id}-${metric.key}`} className={valueClass}>
-                          {formatAmount(value)}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-                
-                <tr className="comparison-metric-group">
-                  <td colSpan={selectedData.length + 1}>Financial Analysis</td>
-                </tr>
-                {METRICS.filter(m => ['roi', 'annualizedReturn', 'equityRequirement', 'loanAmount'].includes(m.key)).map(metric => (
-                  <tr key={metric.key}>
-                    <td>{metric.label}</td>
-                    {selectedData.map(scenario => {
-                      const value = scenario.result[metric.key as keyof CalculationResult];
-                      const isProfit = metric.isProfit;
-                      const valueClass = isProfit ? (value >= 0 ? 'positive-value' : 'negative-value') : '';
-                      
-                      return (
-                        <td key={`${scenario.id}-${metric.key}`} className={valueClass}>
-                          {metric.key === 'roi' || metric.key === 'annualizedReturn'
-                            ? `${value.toFixed(2)}%`
-                            : formatAmount(value)
-                          }
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-                
-                <tr className="comparison-metric-group">
-                  <td colSpan={selectedData.length + 1}>Unit Economics</td>
-                </tr>
-                {METRICS.filter(m => ['costPerSqm', 'sellingPricePerSqm', 'breakEvenUnitPrice'].includes(m.key)).map(metric => (
-                  <tr key={metric.key}>
-                    <td>{metric.label}</td>
+            <div className="data-table-container">
+              <table className="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Metric</th>
                     {selectedData.map(scenario => (
-                      <td key={`${scenario.id}-${metric.key}`}>
-                        {formatAmount(scenario.result[metric.key as keyof CalculationResult])}
-                      </td>
+                      <th key={scenario.id}>{scenario.name}</th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  <tr className="comparison-metric-group">
+                    <td colSpan={selectedData.length + 1}>Key Metrics</td>
+                  </tr>
+                  {METRICS.filter(m => SUMMARY_METRICS.includes(m.key)).map(metric => (
+                    <tr key={metric.key}>
+                      <td>{metric.label}</td>
+                      {selectedData.map(scenario => {
+                        const value = scenario.result[metric.key as keyof CalculationResult];
+                        const isProfit = metric.isProfit;
+                        const valueClass = isProfit ? (value >= 0 ? 'positive-value' : 'negative-value') : '';
+                        
+                        return (
+                          <td key={`${scenario.id}-${metric.key}`} className={valueClass}>
+                            {metric.key === 'roi' || metric.key === 'annualizedReturn'
+                              ? `${value.toFixed(2)}%`
+                              : formatAmount(value)
+                            }
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                  
+                  <tr className="comparison-metric-group">
+                    <td colSpan={selectedData.length + 1}>Project Economics</td>
+                  </tr>
+                  {METRICS.filter(m => ['totalRevenue', 'totalDevelopmentCost', 'totalGrossProfit'].includes(m.key)).map(metric => (
+                    <tr key={metric.key}>
+                      <td>{metric.label}</td>
+                      {selectedData.map(scenario => {
+                        const value = scenario.result[metric.key as keyof CalculationResult];
+                        const isProfit = metric.isProfit;
+                        const valueClass = isProfit ? (value >= 0 ? 'positive-value' : 'negative-value') : '';
+                        
+                        return (
+                          <td key={`${scenario.id}-${metric.key}`} className={valueClass}>
+                            {formatAmount(value)}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                  
+                  <tr className="comparison-metric-group">
+                    <td colSpan={selectedData.length + 1}>Financial Analysis</td>
+                  </tr>
+                  {METRICS.filter(m => ['roi', 'annualizedReturn', 'equityRequirement', 'loanAmount'].includes(m.key)).map(metric => (
+                    <tr key={metric.key}>
+                      <td>{metric.label}</td>
+                      {selectedData.map(scenario => {
+                        const value = scenario.result[metric.key as keyof CalculationResult];
+                        const isProfit = metric.isProfit;
+                        const valueClass = isProfit ? (value >= 0 ? 'positive-value' : 'negative-value') : '';
+                        
+                        return (
+                          <td key={`${scenario.id}-${metric.key}`} className={valueClass}>
+                            {metric.key === 'roi' || metric.key === 'annualizedReturn'
+                              ? `${value.toFixed(2)}%`
+                              : formatAmount(value)
+                            }
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                  
+                  <tr className="comparison-metric-group">
+                    <td colSpan={selectedData.length + 1}>Unit Economics</td>
+                  </tr>
+                  {METRICS.filter(m => ['costPerSqm', 'sellingPricePerSqm', 'breakEvenUnitPrice'].includes(m.key)).map(metric => (
+                    <tr key={metric.key}>
+                      <td>{metric.label}</td>
+                      {selectedData.map(scenario => (
+                        <td key={`${scenario.id}-${metric.key}`}>
+                          {formatAmount(scenario.result[metric.key as keyof CalculationResult])}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         ) : (
           <p>Select at least one scenario to compare</p>
